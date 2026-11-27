@@ -22,18 +22,35 @@
 
 ## 安装
 
-需要 **DeepSeek Harness Desktop**（或带 Web GUI 的 DSH）。本插件是 DSH 的 bundle，包含一个 Host 行和一个浏览器模块，**没有构建步骤**。
+需要 **DeepSeek Harness Desktop**（或带 Web GUI 的 DSH）。本插件是 DSH 的 bundle，包含一个 Host 行和一个浏览器模块，**没有构建步骤**，也**没有发布到 npm**。
 
-1. 克隆或下载本仓库到任意本地目录：
+### 方式一：粘贴仓库地址（推荐）
+
+1. 复制本仓库地址：`https://github.com/ST0new/dsh-harness-orb`
+2. 打开 DSH → **设置 → 插件** → **「添加插件」**
+3. 把地址粘贴到安装输入框，确认安装（这一步会通过 git 克隆仓库并装进当前 profile，需要联网）
+4. 安装完成后在插件页启用它，然后进入 **设置 → 通用**，会看到本插件的两行偏好设置
+
+> 安装对话框本身就以 `https://github.com/author/dsh-plugin` 这样的仓库地址作为示例，直接粘贴本仓库链接即可，不需要手动 clone。
+
+### 方式二：本地目录（适合改代码）
+
+1. 克隆仓库：
 
    ```bash
-   git clone https://github.com/<你的账号>/dsh-harness-orb.git
+   git clone https://github.com/ST0new/dsh-harness-orb.git
    ```
 
-2. 打开 DSH → **设置 → 插件** → **「添加插件」**（Add plugin）→ 选择上一步的目录。
-3. 启用后，进入 **设置 → 通用**，会看到本插件的两行偏好设置。
+2. **设置 → 插件 →「添加插件」** → 选择该目录。
+3. 启用后同样在 **设置 → 通用** 看到两行。
 
-> 「添加插件」做的是把本地目录链接进当前 profile，所以之后 `git pull` 的改动可以直接生效——在插件页把本插件**关闭再启用**即可重新加载浏览器模块，不必重启应用。
+> 这一方式是把目录**链接**进 profile，所以之后 `git pull` 的改动会直接生效——在插件页把本插件**关闭再启用**即可重新加载浏览器模块，不必重启应用。
+
+### 更新
+
+从仓库地址安装后，插件页会为这个插件提供**更新**入口（按仓库的最新提交重新安装）；若没有更新入口，先移除再重新添加一次即可。
+
+安装完成后第一次触发提醒时，如果系统通知没有出现，请检查系统/应用的**通知权限**是否允许；权限不可用时插件仍会响铃。
 
 ## 设置
 
@@ -128,6 +145,7 @@ dsh-harness-orb/
 ├── cordis.patch.yml   # Loader 补丁：插入 dsh-harness-orb 这一行
 ├── package.json       # 包声明与 dsh.bundle / dsh.client 清单
 ├── icon.svg           # 插件图标
+├── LICENSE            # MIT
 ├── locale/
 │   ├── zh.json        # 插件页显示的中文标题与描述
 │   └── en.json        # 英文
@@ -136,10 +154,11 @@ dsh-harness-orb/
 
 ## 开发
 
-- 无构建步骤：`client.js` 就是最终产物，由 DSH 的客户端模块加载器直接加载。
-- 本插件在 profile 里是**链接安装**，改完文件后在插件页关闭再启用，即可让页面加载新代码。
+- 无构建步骤：`client.js` 就是最终产物，由 DSH 的客户端模块加载器直接加载；发布就是推送到 `main`。
+- 本机开发时建议用**方式二（本地目录）**安装：目录被链接进 profile，改完文件后在插件页关闭再启用，页面就会加载新代码。
 - 提示音是 WebAudio 实时合成的正弦音，没有音频资源文件；三档音型定义在 `playSynth()`，重复提醒的音量档位是 `VOLUME_STEPS = [1, 1.5, 2]`。
 - 重复提醒的时间点是 `ESCALATION_DELAYS = [2 * 60 * 1000, 4 * 60 * 1000]`（第一次间隔 2 分钟，之后再过 4 分钟）。
+- 安装/升级由 DSH 的插件安装器完成（`pnpm` 通过 git 克隆），仓库里不需要提交任何构建产物。
 
 ---
 
@@ -157,9 +176,11 @@ and reopening the app does not silence it. Each state (finished / approval /
 question) has its own sound: the built-in synthesized chime or your own audio
 file, with a switch to make repeats louder.
 
-Install by cloning this repository and adding the folder from **Settings →
-Plugins → Add plugin**; the two preference rows then appear in **Settings →
-General**. Everything is stored locally in the browser (localStorage + IndexedDB)
+Install from **Settings → Plugins → Add plugin** by pasting
+`https://github.com/ST0new/dsh-harness-orb`; the two preference rows then appear
+in **Settings → General**. Cloning the repository and picking the folder works
+too, and that variant follows your local edits. Everything is stored locally in
+the browser (localStorage + IndexedDB)
 — nothing leaves the machine.
 
 Limitations: nothing rings while the app is closed; a heavily throttled
