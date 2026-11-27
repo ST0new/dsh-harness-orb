@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="250" viewBox="0 0 760 250" role="img" aria-label="设置 - 通用 中本插件的两行偏好设置示意图">
+  <rect x="0.5" y="0.5" width="759" height="249" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+    <text x="24" y="30" font-size="15" font-weight="600" fill="#1f2328">设置 → 通用</text>
+    <text x="736" y="30" font-size="11" fill="#8c959f" text-anchor="end">界面示意（非截图）</text>
+    <line x1="0.5" y1="44" x2="759.5" y2="44" stroke="#d0d7de"/>
+
+    <text x="24" y="78" font-size="14" fill="#1f2328">完成与等待提醒</text>
+    <text x="24" y="98" font-size="12" fill="#656d76">回合跑完、或 DSH 在等你批准 / 回答时，只要窗口不在前台就响铃并弹出系统通知。</text>
+    <text x="24" y="116" font-size="12" fill="#656d76">没人处理的审批 / 提问会在约 2 分钟、6 分钟后再各提醒一次；窗口一回到前台就停。</text>
+    <rect x="690" y="68" width="36" height="20" rx="10" fill="#0969da"/>
+    <circle cx="708" cy="78" r="8" fill="#ffffff"/>
+    <line x1="0.5" y1="134" x2="759.5" y2="134" stroke="#d0d7de"/>
+
+    <text x="24" y="166" font-size="14" fill="#1f2328">提醒提示音</text>
+    <text x="24" y="186" font-size="12" fill="#656d76">当前（完成）：内置合成铃音（无音频文件）</text>
+    <text x="24" y="214" font-size="12" fill="#656d76">再次提醒时加大音量</text>
+    <rect x="690" y="202" width="36" height="20" rx="10" fill="#0969da"/>
+    <circle cx="708" cy="212" r="8" fill="#ffffff"/>
+
+    <rect x="420" y="148" width="80" height="30" rx="8" fill="#eef1f4"/>
+    <text x="434" y="168" font-size="13" fill="#1f2328">完成</text>
+    <path d="M478 160 L482 165 L486 160" fill="none" stroke="#656d76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="508" y="168" font-size="13" fill="#1f2328">选择文件…</text>
+    <text x="604" y="168" font-size="13" fill="#1f2328">试听</text>
+    <text x="658" y="168" font-size="13" fill="#1f2328">恢复默认</text>
+  </g>
+</svg>
