@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Attention reminders",
+    "description": "Plays a short chime and shows a system notification when a turn finishes, or when DSH is waiting for you to approve a tool call or answer a question — only while the window is in the background, and naming the session; clicking one switches back and opens that session. An unhandled approval or question is repeated after about two and six minutes and stops when you return or answer. Adds two rows to Settings > General: an on/off switch (on by default) and one reminder sound per state (完成 / 待审批 / 待回答), where each can use the built-in chime or your own audio file, with preview and reset. The preferences and files are stored in this browser, not in the profile."
+  }
+}

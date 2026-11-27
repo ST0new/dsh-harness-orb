@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Attention reminder">
+  <circle cx="18" cy="18" r="3.2" fill="#247bbf"/>
+  <g fill="none" stroke="#247bbf" stroke-width="2.6" stroke-linecap="round">
+    <path d="M22.5 10.21 A9 9 0 0 1 22.5 25.79" opacity="0.85"/>
+    <path d="M13.5 25.79 A9 9 0 0 1 13.5 10.21" opacity="0.85"/>
+    <path d="M24.7 6.4 A13.4 13.4 0 0 1 24.7 29.61" opacity="0.45"/>
+    <path d="M11.3 29.61 A13.4 13.4 0 0 1 11.3 6.4" opacity="0.45"/>
+  </g>
+</svg>

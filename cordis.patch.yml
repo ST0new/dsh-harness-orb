@@ -1,0 +1,5 @@
+# This bundle contributes one Host row and one browser module. The row carries
+# no configuration: every reminder setting lives in the page (see README.md).
+- insert:
+    - id: dsh-harness-orb
+      name: 'dsh-harness-orb'
